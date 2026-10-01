@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --ink: CanvasText;
+    --ink-soft: color-mix(in srgb, CanvasText 76%, Canvas 24%);
+    --teal: #167a72;
+    --teal-dark: #105d58;
+    --saffron: #e7b64b;
+    --coral: #ca7052;
+    --paper: Canvas;
+    --surface: color-mix(in srgb, Canvas 96%, CanvasText 4%);
+    --line: color-mix(in srgb, CanvasText 18%, Canvas);
+    --muted: color-mix(in srgb, CanvasText 60%, Canvas 40%);
+}
+
+html,
+body,
+[class*="css"] {
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+    color: var(--ink);
+    letter-spacing: 0;
+}
+
+.stApp {
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(color-mix(in srgb, CanvasText 5%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, CanvasText 5%, transparent) 1px, transparent 1px);
+    background-size: 34px 34px;
+}
+
+[data-testid="stHeader"] {
+    background: color-mix(in srgb, Canvas 92%, transparent);
+    backdrop-filter: blur(10px);
+}
+
+[data-testid="stAppViewContainer"] > .main {
+    border-top: 4px solid var(--saffron);
+}
+
+[data-testid="stAppViewContainer"] > .main .block-container {
+    max-width: 1160px;
+    padding: 2.4rem 2.5rem 4rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--ink) !important;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+h1 {
+    font-size: 2.35rem;
+    line-height: 1.16;
+}
+
+h2 {
+    font-size: 1.65rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p,
+li,
+label {
+    color: var(--ink-soft);
+}
+
+[data-testid="stSidebar"] {
+    background: #173b40;
+    border-right: 1px solid #285258;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    background: #173b40;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label {
+    color: #f4f6f1;
+}
+
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
+    color: #b8ceca;
+}
+
+[data-testid="stSidebar"] [data-testid="stButton"] > button {
+    justify-content: flex-start;
+    border: 1px solid rgba(220, 237, 230, 0.16);
+    background: rgba(255, 255, 255, 0.055);
+    color: #f4f6f1;
+}
+
+[data-testid="stSidebar"] [data-testid="stButton"] > button:hover {
+    border-color: var(--saffron);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+[data-testid="stButton"] > button,
+[data-testid="stFormSubmitButton"] > button,
+[data-testid="stDownloadButton"] > button {
+    min-height: 2.7rem;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--surface);
+    color: var(--ink);
+    font-weight: 650;
+    transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+[data-testid="stButton"] > button:hover,
+[data-testid="stFormSubmitButton"] > button:hover,
+[data-testid="stDownloadButton"] > button:hover {
+    transform: translateY(-1px);
+    border-color: var(--teal);
+    box-shadow: 0 5px 16px rgba(24, 59, 64, 0.1);
+    color: CanvasText;
+}
+
+[data-testid="stButton"] > button:not([kind*="primary"]):hover *,
+[data-testid="stDownloadButton"] > button:hover * {
+    color: CanvasText !important;
+}
+
+[data-testid="stFormSubmitButton"] > button[kind="primary"],
+[data-testid="stFormSubmitButton"] > button[kind*="primary"],
+[data-testid="stButton"] > button[kind*="primary"],
+button[kind*="primaryFormSubmit"],
+button[kind="primary"] {
+    border-color: var(--teal);
+    background: var(--teal) !important;
+    color: #ffffff !important;
+}
+
+button[kind*="primaryFormSubmit"] *,
+button[kind="primary"] * {
+    color: #ffffff !important;
+}
+
+[data-testid="stFormSubmitButton"] > button[kind*="primary"]:hover,
+[data-testid="stButton"] > button[kind*="primary"]:hover,
+button[kind*="primaryFormSubmit"]:hover,
+button[kind="primary"]:hover {
+    border-color: var(--teal-dark);
+    background: var(--teal-dark) !important;
+    color: #ffffff !important;
+}
+
+[data-testid="stForm"] {
+    padding: 1.25rem 1.35rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.055);
+}
+
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stNumberInput"] input {
+    border-radius: 8px;
+    border-color: var(--line);
+    background: Field;
+    color: FieldText;
+}
+
+[data-baseweb="input"] > div,
+[data-baseweb="textarea"] > div {
+    border-color: var(--line) !important;
+    border-radius: 8px !important;
+    background: Field !important;
+    color: FieldText !important;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus,
+[data-testid="stNumberInput"] input:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 2px rgba(22, 122, 114, 0.16);
+}
+
+[data-testid="stMetric"] {
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--surface);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.055);
+}
+
+[data-testid="stMetricLabel"] p {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--ink);
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+[data-testid="stTabs"] [role="tab"] {
+    color: var(--muted);
+    font-weight: 650;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    color: CanvasText !important;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] * {
+    color: CanvasText !important;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+    background: var(--coral);
+}
+
+[data-testid="stProgress"] > div > div {
+    background: var(--teal);
+}
+
+[data-testid="stAlert"] {
+    border-radius: 9px;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+[data-testid="stImage"] img {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+[data-testid="stDataFrame"] {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(231, 182, 75, 0.75);
+    outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+    [data-testid="stAppViewContainer"] > .main .block-container {
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    [data-testid="stForm"] {
+        padding: 1rem;
+    }
+}
